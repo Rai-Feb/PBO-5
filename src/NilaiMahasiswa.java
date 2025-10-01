@@ -6,20 +6,19 @@ public class NilaiMahasiswa {
         // Objek Scanner untuk menerima input
         Scanner input = new Scanner(System.in);
 
-        // --- Tampilan Input ---
+        // --- Display Menu ---
         System.out.println("-------------------------------------");
         System.out.println("        INPUT DATA NILAI MAHASISWA   ");
         System.out.println("-------------------------------------");
 
-        // 1. Input Data Mahasiswa (Teks)
-        // Menghilangkan teks ": <input>"
+        // Input Data Mahasiswa 
         System.out.print("NPM             : "); 
         String npm = input.nextLine(); 
 
         System.out.print("Nama Mahasiswa  : ");
         String nama = input.nextLine(); 
 
-        // 2. Input Nilai (Angka/Double)
+        // Input Nilai Mahasiswa 
         System.out.print("Nilai Kehadiran : ");
         double nilaiKehadiran = input.nextDouble();
 
@@ -31,13 +30,12 @@ public class NilaiMahasiswa {
 
         System.out.print("Nilai UAS       : ");
         double nilaiUAS = input.nextDouble();
-        
-        // Membersihkan buffer Scanner
+       
         input.nextLine(); 
 
         // --- Proses Perhitungan ---
 
-        // Hitung Nilai Akhir
+        // Menghitung Nilai Akhir
         double nilaiAkhir = (0.10 * nilaiKehadiran) + 
                             (0.20 * nilaiTugas) + 
                             (0.30 * nilaiUTS) + 
@@ -45,8 +43,7 @@ public class NilaiMahasiswa {
 
         String grade;
         String keterangan;
-
-        // Tentukan Grade dan Keterangan
+
         if (nilaiAkhir >= 76) {
             grade = "A";
             keterangan = "ISTIMEWA";
@@ -64,9 +61,7 @@ public class NilaiMahasiswa {
             keterangan = "KURANG SEKALI";
         }
 
-        // --- Tampilan Output ---
-        // Menghilangkan teks "<tampil otomatis>" dan menggantinya dengan nilai saja.
-        System.out.println("\n-------------------------------------");
+        // --- Display Output --- System.out.println("\n-------------------------------------");
         System.out.println("        TAMPILAN HASIL OUTPUT        ");
         System.out.println("-------------------------------------");
         
@@ -76,8 +71,7 @@ public class NilaiMahasiswa {
         System.out.printf("Grade           : %s\n", grade);
         System.out.printf("Keterangan      : %s\n", keterangan);
         System.out.println("-------------------------------------");
-
-        // Tutup Scanner
+
         input.close();
     }
 }
