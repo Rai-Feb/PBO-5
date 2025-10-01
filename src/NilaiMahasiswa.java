@@ -3,15 +3,15 @@ import java.util.Scanner;
 public class NilaiMahasiswa {
 
     public static void main(String[] args) {
-        // Objek Scanner untuk menerima input
-        Scanner input = new Scanner(System.in);
 
-        // --- Display Menu ---
+        Scanner input = new Scanner(System.in);
+        
         System.out.println("-------------------------------------");
         System.out.println("        INPUT DATA NILAI MAHASISWA   ");
         System.out.println("-------------------------------------");
 
-        // Input Data Mahasiswa 
+        // Input Data Mahasiswa 
+
         System.out.print("NPM             : "); 
         String npm = input.nextLine(); 
 
@@ -33,45 +33,47 @@ public class NilaiMahasiswa {
        
         input.nextLine(); 
 
-        // --- Proses Perhitungan ---
-
         // Menghitung Nilai Akhir
         double nilaiAkhir = (0.10 * nilaiKehadiran) + 
                             (0.20 * nilaiTugas) + 
                             (0.30 * nilaiUTS) + 
                             (0.40 * nilaiUAS);
 
-        String grade;
+        String mutu;
         String keterangan;
-
+
+
         if (nilaiAkhir >= 76) {
-            grade = "A";
+            mutu = "A";
             keterangan = "ISTIMEWA";
         } else if (nilaiAkhir >= 66) {
-            grade = "B";
+            mutu = "B";
             keterangan = "BAIK";
         } else if (nilaiAkhir >= 56) {
-            grade = "C";
+            mutu = "C";
             keterangan = "CUKUP";
         } else if (nilaiAkhir >= 46) {
-            grade = "D";
+            mutu = "D";
             keterangan = "KURANG";
         } else { // 0 - 45
-            grade = "E";
+            mutu = "E";
             keterangan = "KURANG SEKALI";
         }
 
-        // --- Display Output --- System.out.println("\n-------------------------------------");
+        // Display
+        System.out.println("\n-------------------------------------");
         System.out.println("        TAMPILAN HASIL OUTPUT        ");
         System.out.println("-------------------------------------");
         
         System.out.printf("NPM Mahasiswa   : %s\n", npm);
         System.out.printf("Nama Mahasiswa  : %s\n", nama);
         System.out.printf("Nilai Rata-rata : %.2f\n", nilaiAkhir); 
-        System.out.printf("Grade           : %s\n", grade);
+        System.out.printf("Mutu          : %s\n", mutu);
         System.out.printf("Keterangan      : %s\n", keterangan);
         System.out.println("-------------------------------------");
-
+
+
         input.close();
     }
+
 }
